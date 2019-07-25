@@ -1,0 +1,50 @@
+1. Select * FROM customers;
+
+
+2. SELECT DISTINCT country FROM customers;
+
+3. SELECT * FROM customers WHERE customerid like 'BL%';
+
+4. SELECT * FROM orders LIMIT 100;
+
+5. SELECT * FROM customers WHERE postalcode= 1010 OR PostalCode=3012 OR PostalCode=12209 OR PostalCode=05023;
+
+6. SELECT * FROM orders WHERE ShipRegion<> '';
+
+7. SELECT * FROM customers ORDER BY country , city;
+
+8. INSERT INTO customers(CustomerID, CompanyName, ContactName, ContactTitle, Address, City, Region, PostalCode, Country, Phone, Fax) VALUES
+('abcd', 'autoparts', 'Stu Harv', 'Sales guy', '12345street','Dallas', 'TX', '48765', 'USA','234-456-7890', '234-345-3456');
+
+9. UPDATE orders SET ShipRegion ='EuroZone' WHERE ShipCountry='FRance';
+
+10. DELETE FROM northwind.`order details`WHERE Quantity=1;
+
+11. SELECT AVG(Quantity) From northwind.`order details`; (23.9944)
+    SELECT MAX(Quantity) FROM northwind.`order details`; (130)
+    SELECT MIN(Quantity) FROM northwind.`order details`; (2)
+    
+12. SELECT AVG(Quantity), orderid From northwind.`order details` GROUP BY orderid;
+    SELECT MAX(Quantity), orderid From northwind.`order details` GROUP BY orderid;
+    SELECT MIN(Quantity), orderid From northwind.`order details` GROUP BY orderid;
+13. SELECT CustomerID FROM orders WHERE OrderID=10290; (COMMI)
+
+14. SELECT * FROM orders JOIN customers ON orders.CustomerID = customers.CustomerID; 
+    SELECT * FROM orders LEFT JOIN customers ON orders.CustomerID = customers.CustomerID; 
+    SELECT * FROM orders RIGHT JOIN customers ON orders.CustomerID = customers.CustomerID; 
+15. SELECT FirstName FROM employees WHERE ReportsTo IS NULL;(Andrew)
+16. SELECT FirstName FROM employees WHERE ReportsTo=2;
+
+
+
+CREATE TABLE `db_demos`.`student` (
+  `id` INT NOT NULL,
+  `name` VARCHAR(45) NOT NULL,
+  `class_id` INT NULL,
+  PRIMARY KEY (`id`));
+
+CREATE TABLE `db_demos`.`class` (
+  `id` INT NOT NULL,
+  `titlel` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`));
+
